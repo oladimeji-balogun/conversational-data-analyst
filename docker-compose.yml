@@ -1,0 +1,17 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: postgres_db 
+    environment: 
+      POSTGRES_USER: oladimeji
+      POSTGRES_PASSWORD: mysimplelife
+      POSTGRES_DB: conv_data_analyst_db
+    restart: always
+    ports: 
+      - "5432:5432"
+    volumes: 
+      - postgres_data:/var/lib/postgresql/data
+
+
+volumes: 
+  postgres_data:
